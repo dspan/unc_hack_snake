@@ -6,7 +6,7 @@
 #import('package:bot/html.dart');
 #import('package:bot/retained.dart');
 
-#source("grid_data.dart");
-#source("mock_grid_data.dart");
-#source("grid_view.dart");
-#source("food_element.dart");
+#source("src/graphics/grid_data.dart");
+#source("src/graphics/mock_grid_data.dart");
+#source("src/graphics/grid_view.dart");
+#source("src/graphics/food_element.dart");
