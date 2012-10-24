@@ -1,5 +1,0 @@
-
-class FoodElement extends PElement
-{
-
-}
