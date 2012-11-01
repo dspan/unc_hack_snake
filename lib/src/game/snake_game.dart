@@ -1,7 +1,7 @@
-class SnakeGame
-{
-  void update(GameTime gameTime)
-  {
+class SnakeGame {
+
+
+  void update(GameTime gameTime) {
 
   }
 }

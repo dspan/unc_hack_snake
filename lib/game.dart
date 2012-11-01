@@ -9,3 +9,4 @@
 #import("graphics.dart");
 
 #source("src/game/snake_game.dart");
+#source("src/game/food.dart");

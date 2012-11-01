@@ -36,7 +36,7 @@ class GridElement extends PCanvas
   FoodElement createFood(num cX, num cY) {
     assert(isValidCoordinate(cX, cY));
 
-    final food = new FoodElement.fromUrl(cX * cellFactor, cY * cellFactor, cellFactor, cellFactor);
+    final food = new FoodElement.fromUrl(cellFactor, cellFactor);
     this.addElement(food);
     this.setTopLeft(food, new Coordinate(cX * cellFactor, cY * cellFactor));
     return food;
