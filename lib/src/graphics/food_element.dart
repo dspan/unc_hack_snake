@@ -1,18 +1,22 @@
 class FoodElement extends ImgElement
 {
-  AffineTransform trans = new AffineTransform();
+  AffineTransform _trans;
   int lastTime = 0;
+  final int x;
+  final int y;
 
-  factory FoodElement.fromUrl(int width, int height, [String src = "res/food.png"])
+  AffineTransform get principleTransform => _trans;
+
+  factory FoodElement.fromUrl(int x, int y, int width, int height, [String src = "res/food.png"])
   {
     final image = new ImageElement(src, null, null);
 
-    return new FoodElement(width, height, image);
+    return new FoodElement(x, y, width, height, image);
   }
-  FoodElement(int width, int height, ImageElement img)
+  FoodElement(this.x, this.y, int width, int height, ImageElement img)
       : super(width, height, img, false)
   {
-    trans.rotate(toRadians(30), width / 2, height / 2);
+    _trans = this.addTransform();
   }
 
   // TODO: bring this out of the class into its own class
@@ -26,14 +30,8 @@ class FoodElement extends ImgElement
     int delta = highResTime - lastTime;
     lastTime = highResTime;
 
-    trans.rotate(toRadians(-90 * (delta / 1000)), this.width / 2, this.height / 2);
+    _trans.rotate(toRadians(-90 * (delta / 1000)), (this.width / 2) + this.x, (this.height / 2) + this.y);
   }
-  void drawOverride(CanvasRenderingContext2D ctx)
-  {
-    CanvasUtil.transform(ctx, this.trans);
-    super.drawOverride(ctx);
-  }
-
   num toRadians(num degrees)
   {
     return (degrees / 180) * math.PI;

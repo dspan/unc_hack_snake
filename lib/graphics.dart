@@ -12,5 +12,6 @@
 #source("src/graphics/grid_view.dart");
 #source("src/graphics/grid_element.dart");
 #source("src/graphics/food_element.dart");
+#source("src/graphics/snake_element.dart");
 
 #source("src/graphics/view_models/ifood.dart");

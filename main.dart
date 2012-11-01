@@ -27,6 +27,9 @@ Stage createStage(CanvasElement canvas)
   root.addElement(grid);
 
   food = grid.createFood(5, 5);
+  grid.createSnakePart(5, 6);
+  grid.createSnakePart(5, 7);
+  grid.createSnakePart(5, 8);
 
   return new Stage(canvas, root);
 }
