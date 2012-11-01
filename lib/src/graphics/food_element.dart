@@ -15,6 +15,7 @@ class FoodElement extends ImgElement
     trans.rotate(toRadians(30), width / 2, height / 2);
   }
 
+  // TODO: bring this out of the class into its own class
   void doAnim(int highResTime)
   {
     if (lastTime == 0)

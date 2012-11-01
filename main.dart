@@ -23,9 +23,10 @@ Stage createStage(CanvasElement canvas)
 {
   PCanvas root = new PCanvas(canvas.width, canvas.height);
 
-  food = new FoodElement.fromUrl(24, 24);
-  root.addElement(food);
-  root.setCenter(food, new Coordinate(50, 50));
+  GridElement grid = new GridElement(20, 15, 24);
+  root.addElement(grid);
+
+  food = grid.createFood(5, 5);
 
   return new Stage(canvas, root);
 }
