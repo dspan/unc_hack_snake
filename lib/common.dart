@@ -1,5 +1,8 @@
-#library("snake:common");
+library snake_common;
 
-#import("package:reactive/reactive_browser.dart");
+import "package:bot/bot.dart";
+import "package:reactive/reactive_browser.dart";
 
-#source("src/common/game_time.dart");
+part "src/common/game_time.dart";
+part "src/common/updateable.dart";
+part "src/common/updateable_container.dart";

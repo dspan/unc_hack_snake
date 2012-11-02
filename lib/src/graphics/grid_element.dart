@@ -1,12 +1,10 @@
-class GridElement extends PCanvas
-{
+class GridElement extends PCanvas {
   num _cWidth, _cHeight;
   num _cellFactor;
   ImageElement image;
 
   GridElement(num cWidth, num cHeight, num cellFactor)
-      : super(cWidth * cellFactor, cHeight * cellFactor)
-  {
+      : super(cWidth * cellFactor, cHeight * cellFactor) {
     _cWidth = cWidth;
     _cHeight = cHeight;
     _cellFactor = cellFactor;
@@ -17,8 +15,7 @@ class GridElement extends PCanvas
   num get cHeight => _cHeight;
   num get cellFactor => _cellFactor;
 
-  void drawOverride(CanvasRenderingContext2D ctx)
-  {
+  void drawOverride(CanvasRenderingContext2D ctx) {
     for (int row = 0; row < _cHeight; row++)
     {
       for (int col = 0; col < _cWidth; col++)
@@ -29,10 +26,10 @@ class GridElement extends PCanvas
     super.drawOverride(ctx);
   }
 
-  bool isValidCoordinate(num cX, num cY)
-  {
+  bool isValidCoordinate(num cX, num cY) {
     return (0 < cX && cX < _cWidth && 0 < cY && cY < _cHeight);
   }
+
   FoodElement createFood(num cX, num cY) {
     assert(isValidCoordinate(cX, cY));
 
@@ -41,8 +38,8 @@ class GridElement extends PCanvas
     this.setTopLeft(food, new Coordinate(cX * cellFactor, cY * cellFactor));
     return food;
   }
-  SnakeElement createSnakePart(num cX, num cY)
-  {
+
+  SnakeElement createSnakePart(num cX, num cY) {
     assert(isValidCoordinate(cX, cY));
 
     SnakeElement snake = new SnakeElement.fromUrl(cellFactor, cellFactor);

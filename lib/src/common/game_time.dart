@@ -6,8 +6,7 @@ class GameTime
   int get elapsed => _elapsed;
   int get totalElapsed => _totalElapsed;
 
-  void update(int totalElapsedTime)
-  {
+  void update(int totalElapsedTime) {
     _elapsed = totalElapsedTime - _totalElapsed;
     _totalElapsed = totalElapsedTime;
   }

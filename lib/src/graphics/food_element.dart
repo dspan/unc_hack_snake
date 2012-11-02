@@ -5,20 +5,18 @@ class FoodElement extends ImgElement
 
   AffineTransform get principleTransform => _trans;
 
-  factory FoodElement.fromUrl(int width, int height, [String src = "res/food.png"])
-  {
+  factory FoodElement.fromUrl(int width, int height, [String src = "res/food.png"]) {
     final image = new ImageElement(src, null, null);
 
     return new FoodElement(width, height, image);
   }
+
   FoodElement(int width, int height, ImageElement img)
-      : super(width, height, img, false)
-  {
+      : super(width, height, img, false) {
   }
 
   // TODO: bring this out of the class into its own class
-  void doAnim(int highResTime)
-  {
+  void doAnim(int highResTime) {
     if (_trans == null)
     {
       _trans = this.addTransform();
@@ -33,8 +31,8 @@ class FoodElement extends ImgElement
 
     _trans.rotate(toRadians(-90 * (delta / 1000)), (this.width / 2), (this.height / 2));
   }
-  num toRadians(num degrees)
-  {
+
+  num toRadians(num degrees) {
     return (degrees / 180) * math.PI;
   }
 }
