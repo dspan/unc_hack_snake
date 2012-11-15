@@ -1,5 +1,4 @@
-class Food
-{
+class Food {
   SnakeGame _owner;
   int _value;
   int _cX;
