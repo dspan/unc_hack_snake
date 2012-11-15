@@ -34,9 +34,9 @@ Stage createStage(CanvasElement canvas)
   return new Stage(canvas, root);
 }
 
-void loop(int highResTime)
+void loop(double highResTime)
 {
-  food.doAnim(highResTime);
+  food.doAnim(highResTime.toInt());
   stage.draw();
 
   window.requestAnimationFrame(loop);

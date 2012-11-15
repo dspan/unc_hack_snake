@@ -10,7 +10,7 @@ class GridElement extends PCanvas {
     _cWidth = cWidth;
     _cHeight = cHeight;
     _cellFactor = cellFactor;
-    image = new ImageElement("res/grid.png", null, null);
+    image = new ImageElement(src: "res/grid.png");
   }
 
   num get cWidth => _cWidth;

@@ -8,7 +8,7 @@ class FoodElement extends ImgElement
   AffineTransform get principleTransform => _trans;
 
   factory FoodElement.fromUrl(int width, int height, [String src = "res/food.png"]) {
-    final image = new ImageElement(src, null, null);
+    final image = new ImageElement(src: src);
 
     return new FoodElement(width, height, image);
   }

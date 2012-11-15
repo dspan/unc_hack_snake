@@ -4,7 +4,7 @@ class SnakeElement extends ImgElement
 {
   factory SnakeElement.fromUrl(int width, int height, [String src = "res/snake.png"])
   {
-    final image = new ImageElement(src, null, null);
+    final image = new ImageElement(src: src);
 
     return new SnakeElement(width, height, image);
   }
