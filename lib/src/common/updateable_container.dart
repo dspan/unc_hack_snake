@@ -1,3 +1,5 @@
+part of snake_common;
+
 abstract class UpdateableContainer extends Updateable {
   final _updateables = new List<Updateable>();
   bool _initialized = false;

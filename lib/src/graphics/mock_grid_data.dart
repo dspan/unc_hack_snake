@@ -1,3 +1,5 @@
+part of snake_graphics;
+
 class MockGridData implements GridData
 {
   bool isSnake(int x, int y)

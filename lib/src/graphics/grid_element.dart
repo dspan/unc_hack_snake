@@ -1,3 +1,5 @@
+part of snake_graphics;
+
 class GridElement extends PCanvas {
   num _cWidth, _cHeight;
   num _cellFactor;

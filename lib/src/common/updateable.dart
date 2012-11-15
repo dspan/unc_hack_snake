@@ -1,3 +1,5 @@
+part of snake_common;
+
 abstract class Updateable extends DisposableImpl {
   bool enabled = true;
   int updateOrder;

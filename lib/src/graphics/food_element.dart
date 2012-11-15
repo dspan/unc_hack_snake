@@ -1,3 +1,5 @@
+part of snake_graphics;
+
 class FoodElement extends ImgElement
 {
   AffineTransform _trans;

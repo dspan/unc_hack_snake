@@ -1,9 +1,9 @@
-#import("dart:html");
-#import('dart:math', prefix:'math');
-#import('package:bot/bot.dart');
-#import('package:bot/html.dart');
-#import('package:bot/retained.dart');
-#import("lib/graphics.dart");
+import "dart:html";
+import 'dart:math' as math;
+import 'package:bot/bot.dart';
+import 'package:bot/html.dart';
+import 'package:bot/retained.dart';
+import "lib/graphics.dart";
 
 CanvasRenderingContext2D ctx;
 Stage stage;

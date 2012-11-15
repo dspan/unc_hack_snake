@@ -1,3 +1,5 @@
+part of snake_common;
+
 class GameTime
 {
   int _elapsed;

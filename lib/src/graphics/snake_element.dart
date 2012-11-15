@@ -1,3 +1,5 @@
+part of snake_graphics;
+
 class SnakeElement extends ImgElement
 {
   factory SnakeElement.fromUrl(int width, int height, [String src = "res/snake.png"])

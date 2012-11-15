@@ -1,3 +1,5 @@
+part of snake_game;
+
 class GridManager {
   List<Food> _foodGrid;
   int _width;

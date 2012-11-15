@@ -1,3 +1,5 @@
+part of snake_game;
+
 class SnakeGame extends UpdateableContainer {
   final _gameTime = new GameTime();
   final foodPieces = new List<Food>();

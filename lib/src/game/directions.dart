@@ -1,3 +1,5 @@
+part of snake_game;
+
 class Directions {
   static final Vector up = new Vector(0, 1);
   static final Vector right = new Vector(1, 0);

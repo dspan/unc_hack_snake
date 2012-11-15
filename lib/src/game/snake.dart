@@ -1,3 +1,5 @@
+part of snake_game;
+
 class Snake extends Updateable {
   final segments = new List<SnakeSegment>();
   Vector direction;

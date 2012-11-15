@@ -1,3 +1,5 @@
+part of snake_game;
+
 class Food {
   SnakeGame _owner;
   int _value;
