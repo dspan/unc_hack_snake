@@ -41,10 +41,10 @@ class GridElement extends PCanvas {
     return food;
   }
 
-  SnakeElement createSnakePart(num cX, num cY) {
+  SnakeSegmentElement createSnakePart(num cX, num cY) {
     assert(isValidCoordinate(cX, cY));
 
-    SnakeElement snake = new SnakeElement.fromUrl(cellFactor, cellFactor);
+    SnakeSegmentElement snake = new SnakeSegmentElement.fromUrl(cellFactor, cellFactor);
     this.addElement(snake);
     this.setTopLeft(snake, new Coordinate(cX * cellFactor, cY * cellFactor));
     return snake;

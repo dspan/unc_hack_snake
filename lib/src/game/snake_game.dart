@@ -11,8 +11,8 @@ class SnakeGame extends UpdateableContainer {
   }
 
   void run() {
-    window.requestAnimationFrame((int firstTime) {
-      _gameTime.update(firstTime);
+    window.requestAnimationFrame((double firstTime) {
+      _gameTime.update(firstTime.toInt());
       _requestFrame();
     });
   }
@@ -21,8 +21,8 @@ class SnakeGame extends UpdateableContainer {
     window.requestAnimationFrame(_tick);
   }
 
-  void _tick(int highResTime) {
-    _gameTime.update(highResTime);
+  void _tick(double highResTime) {
+    _gameTime.update(highResTime.toInt());
     update(_gameTime);
     _requestFrame();
   }

@@ -5,6 +5,7 @@ class Snake extends Updateable {
   Vector direction;
   GridManager grid;
   final _deathEvent = new EventHandle<Snake>();
+  final _grewEvent = new EventHandle<Snake>();
 
   int movementTimer = 0;
   final movementStepTime = 500;
@@ -14,6 +15,7 @@ class Snake extends Updateable {
   }
 
   EventRoot<Snake> get deathEvent => _deathEvent;
+  EventRoot<Snake> get grewEvent => _grewEvent;
   SnakeSegment get head => (this.segments.length > 0 ? this.segments[0] : null);
                set head(SnakeSegment value) => this.segments[0] = value;
   SnakeSegment get tail => (this.segments.length > 0 ? this.segments[this.segments.length - 1] : null);
@@ -71,22 +73,24 @@ class Snake extends Updateable {
   }
 
   void move() {
+    assert(this.canMove());
+
     // store data of whether or not we should grow
     var shouldGrow = grid.isFoodAtPos(this.head.cellPos + this.direction);
-    var tail = this.segments[this.segments.length - 1];
+    var tailPos = this.segments[this.segments.length - 1].cellPos;
 
     // move the segments
-    for (int i = 1; i < this.segments.length; i++)
+    for (int i = this.segments.length; i > 0; i--)
     {
        // move all of the segments back one
-       this.segments[i] = this.segments[i - 1];
+       this.segments[i].cellPos = this.segments[i - 1].cellPos;
     }
     // create a new head
-    this.head = new SnakeSegment(this.head.cellPos + this.direction);
+    this.head.cellPos = this.head.cellPos + this.direction;
 
     if (shouldGrow) {
-      // re-add the last tail if we moved onto a food piece
-      this.segments.add(tail);
+      // create a tail segment
+      this.segments.add(new SnakeSegment(tailPos));
     }
   }
 }
